@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+    	
+    	<h1>Rango says...hello world!</h1>
+
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                <li><a href="/rango/category/{{ category.slug }}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
+
+        <form action="#">
+        	<input type="text" placeholder="Enter Username">
+        	<input type="password" placeholder="Password">
+        	<input type="submit" value="Submit">
+        </form>
+        <a href="/rango/about/">About</a><br />
+    </body>
+
+</html>
